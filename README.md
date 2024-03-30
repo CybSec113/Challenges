@@ -11,3 +11,6 @@ I am a seasoned Financial Risk Manager with prior experience in Software Develop
 In May, 2024, I expect to graduate from NYU's Tandon School of Engineering as a Cyber Fellow (85% merit scholarship) with a Master of Science degree in Cybersecurity (Comp. Sci. track).  GPA: 3.8
 
 I also have undergraduate degrees in Computer Science, Business Administration, and an MBA with a concentration in Financial Engineering.
+
+## HOW to execute these solutions
+These solutions are currently written for Python3 interpreter (3.12.2).  Make sure you have the dependent imported modules.  Files will typically have a single defined function and a main.  The "Solution" includes only the code in the function body, not the main function.  The main function includes a few test cases that can be alternated.
