@@ -1,61 +1,42 @@
 from typing import List
 # Write any import statements here
-import timeit
-import random
-import math
 
 def getMinCodeEntryTime(N: int, M: int, C: List[int]) -> int:
     # Write your code here
-    def minMoveTime(source: int, target: int, N1: int) -> int:
-        diff = abs(source-target)
-        if diff >= math.ceil(N1/2):
-            return N1-diff
-        else:
-            return diff
+
+    #returns smallest distance from current lock number (e.g., source) to target
+    def minMoveTime(source: int, target: int):
+        diff=0
+        if source-target > 0:
+            diff=source-target
+        else: diff=target-source
+        return min(diff, N-diff)
 
     result=0
-    lock1=1
-    lock2=1
-    for i in range(0, M):
-        print("i ===> ", i, C[i])
-        min1=minMoveTime(lock1,C[i],N)
-        min2=minMoveTime(lock2,C[i],N)
-        #print("mins", min1, min2)
+    lock1,lock2=1,1  # set starging position and keep track of current position
+    #add to result: smallest dist to target on either lock, then update current position for that lock
+    for i in range(M):
+        min1=minMoveTime(lock1,C[i])
+        min2=minMoveTime(lock2,C[i])
         if min1 <= min2:
             result+=min1
             lock1=C[i]
         else:
             result+=min2
             lock2=C[i]
-        print("locks", lock1, lock2, result)
-        print()
 
     return result
 
-
 if __name__ == '__main__':
-    #ans: 2
-    N1=3
-    M1=3
-    C1=[1,2,3]
-    #ans: 11
-    N2=10
-    M2=4
-    C2=[9,4,4,8]
-    #ans: 8
-    N3=97
-    M3=2
-    #C3=[90,30,32,25,2,4,19,86,1,26]
-    C3=[1,50]
-    #ans: ??
-    N4=99
-    M4=10
-    C4=[]
-    for i in range(0,M4):
-        C4.append(random.choice(range(1,N4+1)))
 
-    print(C3)
-    start = timeit.default_timer()
-    print("result:", getMinCodeEntryTime(N3,M3,C3))
-    stop = timeit.default_timer()
-    print("runtime (secs):", stop-start)
+    #Test 1: 2
+    N=3
+    M=3
+    C=[1,2,3]
+    print("Test 1", getMinCodeEntryTime(N,M,C))
+
+    #Test 2: 11
+    N=10
+    M=4
+    C=[9,4,4,8]
+    print("Test 2", getMinCodeEntryTime(N,M,C))
