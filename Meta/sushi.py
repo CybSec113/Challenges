@@ -9,6 +9,7 @@ def getMaximumEatenDishCount(N: int, D: List[int], K: int) -> int:
     hist=set()
     oldest=D[0]
 
+    # keep track of eaten dishes using history set.  skip counting if D[n] in history set.
     for n in range(0, N):
         if D[n] in hist:
             continue
@@ -23,26 +24,23 @@ def getMaximumEatenDishCount(N: int, D: List[int], K: int) -> int:
     return result
 
 
+# Test cases
 if __name__ == '__main__':
-    N1=6
-    D1=[1,2,3,3,2,1]
-    K1=1
 
-    N2=6
-    D2=[1,2,3,3,2,1]
-    K2=2
+    # Test 1
+    N=6
+    D=[1,2,3,3,2,1]
+    K=1
+    print("Test 1:", getMaximumEatenDishCount(N,D,K))
 
-    N3=7
-    D3=[1,2,1,2,1,2,1]
-    K3=2
+    # Test 2
+    N=6
+    D=[1,2,3,3,2,1]
+    K=2
+    print("Test 2:", getMaximumEatenDishCount(N,D,K))
 
-    #N4=500000    #max 500,000
-    #D4=[]
-    #K4=N4
-    #for i in range(0,N4):
-        #D4.append(random.choice(range(1,N4+1)))
-
-    start = timeit.default_timer()
-    print("result:", getMaximumEatenDishCount(N3,D3,K3))
-    stop = timeit.default_timer()
-    print("runtime (secs):", stop-start)
+    # Test 3
+    N=7
+    D=[1,2,1,2,1,2,1]
+    K=2
+    print("Test 3:", getMaximumEatenDishCount(N,D,K))

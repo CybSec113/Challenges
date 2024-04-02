@@ -12,18 +12,8 @@ def getMinCodeEntryTime(N: int, M: int, C: List[int]) -> int:
         else: diff=target-source
         return min(diff, N-diff)
 
-    result=0
-    lock1,lock2=1,1  # set starging position and keep track of current position
-    #add to result: smallest dist to target on either lock, then update current position for that lock
-    for i in range(M):
-        min1=minMoveTime(lock1,C[i])
-        min2=minMoveTime(lock2,C[i])
-        if min1 <= min2:
-            result+=min1
-            lock1=C[i]
-        else:
-            result+=min2
-            lock2=C[i]
+    # need to rethink this approach using dynamic programming
+    # prior approach was 'greedy' and sub-optimal
 
     return result
 
