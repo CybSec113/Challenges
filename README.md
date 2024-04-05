@@ -2,8 +2,11 @@
 ## WHAT is this Repo?
 This Repo includes Coding Challeges available on Meta's career profile page.  Files that solve challenges are marked with a leading "X".  Commit comments describe current status of unsolved challenges (e.g., 2 of 33 test cases time out, etc.).
 
+While I often Googled language and algorithm references, all the code was written by me.
+
 ## WHY is this Repo here?
 I am building a Repo to demonstrate coding proficiency.  The end goal is transitioning to a Developer role.
+I just started building this repo in April-2024.  This is very much a work in progress.
 
 ## WHO's Repo is this?
 I am a seasoned Financial Risk Manager with prior experience in Software Development (Linux, C++, SQL).  I am pursuing a career shift into Software Development, hopefully, somewhat related to my prior Risk Management experience.
