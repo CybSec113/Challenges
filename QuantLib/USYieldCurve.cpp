@@ -14,6 +14,7 @@
 #include <iostream>
 #include <iomanip>
 
+// a useful macro
 #define LENGTH(a) (sizeof(a)/sizeof(a[0]))
 
 using namespace QuantLib;
@@ -111,11 +112,13 @@ int main(int, char* []) {
         }
 
         // This will build the actual curve
+        // Traits: Discount, ZeroYield, ForwardRate, SimpleZeroYield
+        // Interpolation type: https://rkapl123.github.io/QLAnnotatedSource/d6/d86/group__interpolations.html
         auto treasCurve01 = ext::make_shared<PiecewiseYieldCurve<Discount, LogLinear>>(treasSettlementDays,
                                                                     treasCalendar,
                                                                     ratesInst,
                                                                     treasDayCount);
-        cout << "Treasury Curve 01: Piecewise Yield Curve" << endl;
+        cout << "Treasury Curve 01: Piecewise Yield Curve: Discount, LogLinear" << endl;
         cout << "Reference Date: " << treasCurve01->referenceDate() << endl;
         for (std::pair<Date,Real>& i : treasCurve01->nodes()) {
             cout << io::short_date(i.first) << " ";

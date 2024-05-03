@@ -10,4 +10,8 @@ Pursuing a technology career that also leverages my experience in risk managemen
 
 1) Install boost and QuantLib.  
 2) Review some of the examples provided, including FittedBondCurve.cpp and Bonds.cpp 
-4) Compile using the recommended approach: ``g++ `quantlib-config --cflags` USYieldCurve.cpp -o USYieldCurve `quantlib-config --libs` ``
+3) configure --with-boost-include=/opt/homebrew/include/ \
+            --prefix=${HOME}/local/ \
+            CXXFLAGS='-O2 -stdlib=libc++ -mmacosx-version-min=10.9' \
+            LDFLAGS='-stdlib=libc++ -mmacosx-version-min=10.9'
+4) Compile using the recommended approach: ``g++ `/usr/local/opt/quantlib/bin/quantlib-config --cflags` USYieldCurve.cpp -o USYieldCurve `/usr/local/opt/quantlib/bin/quantlib-config --libs` ``
