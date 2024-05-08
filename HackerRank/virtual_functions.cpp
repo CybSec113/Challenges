@@ -5,6 +5,9 @@
 #include <algorithm>
 using namespace std;
 
+// create Person, Professor, and Student classes with virtual functions as below.
+// compile with: g++ -std=c++11 virtual_functions.cpp
+
 class Person {
 public:
     static int stud_id;
