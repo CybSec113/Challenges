@@ -15,3 +15,4 @@
 | 1768 | Easy | Merge Strings Alternately |
 | **Two Pointers** |||
 | 283 | Easy | Move Zeroes |
+| 392 | Easy | Is Subsequence |
