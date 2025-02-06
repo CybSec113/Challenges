@@ -1,5 +1,9 @@
 probenv/
-a.out
-*.class
 *.dSYM/
+
 .vscode/
+.DS_Store
+
+**/a.out
+**/*.class
+**/*.txt
