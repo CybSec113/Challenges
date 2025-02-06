@@ -1,2 +1,5 @@
 probenv/
 a.out
+*.class
+*.dSYM/
+.vscode/
